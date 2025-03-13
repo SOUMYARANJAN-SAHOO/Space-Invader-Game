@@ -1,15 +1,12 @@
 #pragma once
-
 #include <raylib.h>
 
-class Laser{
+class Block{
     public:
-        Laser(Vector2 pos, int speed);
-        void Update();
+        Block(Vector2 position);
         void Draw();
-        bool active;
         Rectangle GetRectangle();
+
     private:
         Vector2 position;
-        int speed;
 };
