@@ -293,12 +293,12 @@ void Game::MoveAliens()
         if (alien.position.x + alien.alienImages[alien.type - 1].width > GetScreenWidth() - 25)
         {
             aliensDirection = -1;
-            MoveDownAliens(4);
+            MoveDownAliens(2);
         }
         if (alien.position.x < 25)
         {
             aliensDirection = 1;
-            MoveDownAliens(4);
+            MoveDownAliens(2);
         }
         alien.Update(aliensDirection);
     }
@@ -320,7 +320,7 @@ void Game::AlienShootLaser()
         int randomAlienIndex = GetRandomValue(0, aliens.size() - 1);
         Alien &alien = aliens[randomAlienIndex];
         Vector2 laserPosition = {alien.position.x + alien.alienImages[alien.type - 1].width / 2, alien.position.y + alien.alienImages[alien.type - 1].height};
-        alienLasers.push_back(Laser(laserPosition, 6));
+        alienLasers.push_back(Laser(laserPosition, 6, RED));
 
         timeLastAlienFired = GetTime();
     }

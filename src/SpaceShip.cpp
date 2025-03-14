@@ -69,7 +69,7 @@ void SpaceShip::FireLaser()
     if(GetTime() - lastFire >= 0.35)
     {
         PlaySound(LaserSound);
-        Laser laserBullet = Laser(Vector2{position.x + image.width / 2 - 2, position.y}, -6);
+        Laser laserBullet = Laser(Vector2{position.x + image.width / 2 - 2, position.y}, -6, GREEN);
         laser.push_back(laserBullet);
         lastFire = GetTime();
     }
